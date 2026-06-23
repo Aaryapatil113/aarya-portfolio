@@ -1,255 +1,363 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Aarya Patil" />
-    <meta
-      name="description"
-      content="Aarya Patil - Full Stack Developer & UI/UX Enthusiast. Master's student in Computer Science at Northeastern University."
-    />
-    <meta
-      name="keywords"
-      content="Aarya Patil, Full Stack Developer, Web Developer, Computer Science "
-    />
-    <link rel="icon" type="image/png" href="images/favicon.png" />
-    <title>Aarya Patil | Full Stack Developer</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Aarya Patil" />
+  <meta name="description" content="Aarya Patil — Full Stack Developer & UI/UX Enthusiast. Master's student in Computer Science at Northeastern University." />
+  <meta name="keywords" content="Aarya Patil, Full Stack Developer, Web Developer, Computer Science" />
+  <title>Aarya Patil | Full Stack Developer</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-      <div class="container">
-        <a href="#home" class="logo">AP</a>
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button
-          class="theme-toggle"
-          id="theme-toggle"
-          aria-label="Toggle theme"
-        >
-          <span class="sun">☀️</span>
-          <span class="moon">🌙</span>
-        </button>
+<!-- ── Navbar ──────────────────────────────────────────── -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">
+      <a href="#home">AP</a>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── Hero ────────────────────────────────────────────── -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="hero-eyebrow">Available for Fall 2026 Co-op</span>
+    <h1 class="hero-title">
+      Hi, I'm<br />
+      <em>Aarya Patil</em>
+    </h1>
+    <p class="hero-subtitle">
+      Full stack developer with a designer's eye — building interfaces that feel as good as they look.
+    </p>
+    <div class="hero-buttons">
+      <a href="projects.html" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>scroll</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── About ───────────────────────────────────────────── -->
+<section class="about section-hidden" id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-image">
+        <img src="images/profile.png" alt="Aarya Patil" class="profile-img"
+             onerror="this.style.display='none'" />
       </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-content">
-          <h1 class="hero-title">
-            Hi, I'm <span class="gradient-text">Aarya Patil</span> 👋
-          </h1>
-          <p class="hero-subtitle">Full Stack Developer & UI/UX Enthusiast</p>
-          <p class="hero-description">
-            Master's student in Computer Science at Northeastern University,
-            passionate about creating beautiful and functional web experiences.
-          </p>
-          <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">View Projects</a>
-            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-          <div class="about-image">
-            <img
-              src="images/profile.png"
-              alt="Aarya Patil profile photo"
-              class="profile-img"
-            />
-          </div>
-          <div class="about-text">
-            <p>
-              I'm a Master's student in Computer Science at Northeastern
-              University's Khoury College, specializing in front-end development
-              and UI/UX design.
-            </p>
-            <p>
-              With a background in Computer Engineering and experience as a
-              Software Engineer, I bring both technical expertise and creative
-              vision to every project.
-            </p>
-            <p>
-              Currently seeking Summer 2026 co-op opportunities at innovative
-              tech companies.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-      <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">Hover over cards to see project details</p>
-        <div class="projects-grid" id="projects-grid">
-          <!-- Cards generated by JavaScript -->
-        </div>
-        <div class="projects-cta">
-          <a href="projects.html" class="btn btn-primary">View All Projects</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-      <div class="container">
-        <h2 class="section-title">Skills & Technologies</h2>
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3>Frontend</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">React</span>
-              <span class="skill-tag">Angular</span>
-              <span class="skill-tag">HTML5</span>
-              <span class="skill-tag">CSS3</span>
-              <span class="skill-tag">Figma</span>
-            </div>
-          </div>
-          <div class="skill-category">
-            <h3>Backend</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Node.js</span>
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">Java</span>
-              <span class="skill-tag">MySQL</span>
-            </div>
-          </div>
-          <div class="skill-category">
-            <h3>Tools & Other</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Git</span>
-              <span class="skill-tag">GitHub</span>
-              <span class="skill-tag">VS Code</span>
-              <span class="skill-tag">UI/UX Design</span>
-              <span class="skill-tag">Figma</span>
-              <span class="skill-tag">Canva</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-      <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">
-          I'm currently looking for Summer 2026 co-op opportunities!
+      <div class="about-text">
+        <p class="section-label">About Me</p>
+        <h2 class="section-title">Building things that matter</h2>
+        <p>
+          I'm a Master's student in Computer Science at Northeastern University's Khoury College,
+          specializing in front-end development and UI/UX design. With a background in
+          Computer Engineering from Pune, I bring both technical depth and creative vision to every project.
         </p>
+        <p>
+          I love the intersection where design meets engineering — where a well-thought-out
+          component architecture makes the UI faster, and where good design instinct makes
+          the code cleaner.
+        </p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-number">3.9</span>
+            <span class="stat-label">GPA</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">4+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Technologies</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="contact-content">
-          <div class="contact-info">
-            <div class="contact-item">
-              <span class="contact-icon">📧</span>
-              <div>
-                <h3>Email</h3>
-                <a href="mailto:patil.aary@northeastern.edu"
-                  >patil.aary@northeastern.edu</a
-                >
-              </div>
-            </div>
-            <div class="contact-item">
-              <span class="contact-icon">💼</span>
-              <div>
-                <h4>LinkedIn</h4>
+<!-- ── Featured Projects ───────────────────────────────── -->
+<section class="projects section-hidden" id="projects">
+  <div class="container">
+    <p class="section-label">Selected Work</p>
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-subtitle">Hover over a card to see details</p>
 
-                <a
-                  href="https://www.linkedin.com/in/aaryapatil1113/"
-                  target="_blank"
-                  rel="noopener"
-                  >linkedin.com/in/aaryapatil1113/</a
-                >
-              </div>
-            </div>
-            <div class="contact-item">
-              <span class="contact-icon">💻</span>
-              <div>
-                <h4>GitHub</h4>
+    <div class="projects-grid">
 
-                <a
-                  href="https://github.com/aaryapatil113"
-                  target="_blank"
-                  rel="noopener"
-                  >github.com/aaryapatil113</a
-                >
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="project-image-placeholder" style="height:200px;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🧾</div>
+            <div class="project-front-content">
+              <h3 class="project-title">Expiro</h3>
+              <p style="font-size:0.85rem;color:var(--text-muted);margin-top:0.25rem">Role-based inventory & expiry tracking</p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
               </div>
             </div>
           </div>
-
-          <form class="contact-form" id="contact-form">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                placeholder="Your name"
-              />
+          <div class="flip-card-back">
+            <p class="project-description">Role-based inventory management for restaurants — built end-to-end with auth, dashboards, and expiry alerts.</p>
+            <ul class="project-features">
+              <li>3 user roles with JWT auth</li>
+              <li>Real-time expiry alerts</li>
+              <li>Usability tested with 5 participants</li>
+            </ul>
+            <div class="project-links">
+              <a href="projects.html" class="project-link">Details</a>
+              <a href="https://github.com/aaryapatil113" class="project-link" target="_blank">GitHub</a>
             </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder="your.email@example.com"
-              />
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                required
-                placeholder="Your message..."
-              ></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-            <div class="form-status" id="form-status"></div>
-          </form>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <p>&copy; 2026 Aarya Patil. All rights reserved.</p>
-        <p>Built with HTML5, CSS3, and ES6+</p>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="project-image-placeholder" style="height:200px;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">🎯</div>
+            <div class="project-front-content">
+              <h3 class="project-title">ClubMatch</h3>
+              <p style="font-size:0.85rem;color:var(--text-muted);margin-top:0.25rem">Club discovery platform for students</p>
+              <div class="project-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">UI/UX</span>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <p class="project-description">Surfaces student organizations based on interest tags, availability, and campus.</p>
+            <ul class="project-features">
+              <li>Interest-based tag filtering</li>
+              <li>Mobile-first responsive design</li>
+              <li>Accessible card-based UI</li>
+            </ul>
+            <div class="project-links">
+              <a href="projects.html" class="project-link">Details</a>
+              <a href="https://github.com/aaryapatil113" class="project-link" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
 
-    <!-- JavaScript Modules -->
-    <script type="module" src="js/main.js"></script>
-  </body>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="project-image-placeholder" style="height:200px;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;font-size:2.5rem;">📅</div>
+            <div class="project-front-content">
+              <h3 class="project-title">Calendar Application</h3>
+              <p style="font-size:0.85rem;color:var(--text-muted);margin-top:0.25rem">Multi-calendar Java desktop app</p>
+              <div class="project-tech">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">MVC</span>
+                <span class="tech-tag">JUnit</span>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <p class="project-description">Full-featured desktop calendar with timezone-aware scheduling, iCal export, and undo/redo.</p>
+            <ul class="project-features">
+              <li>MVC + Command pattern</li>
+              <li>iCal (.ics) export/import</li>
+              <li>90%+ test coverage</li>
+            </ul>
+            <div class="project-links">
+              <a href="projects.html" class="project-link">Details</a>
+              <a href="https://github.com/aaryapatil113" class="project-link" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="projects-cta">
+      <a href="projects.html" class="btn btn-secondary">View All Projects →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Skills ──────────────────────────────────────────── -->
+<section class="skills section-hidden" id="skills">
+  <div class="container">
+    <p class="section-label">What I Work With</p>
+    <h2 class="section-title">Skills & Technologies</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Frontend</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Angular</span>
+          <span class="skill-tag">HTML5</span>
+          <span class="skill-tag">CSS3</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Backend</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">MongoDB</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h3>Design & Tools</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Figma</span>
+          <span class="skill-tag">UI/UX Design</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">Canva</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ─────────────────────────────────────────── -->
+<section class="contact section-hidden" id="contact">
+  <div class="container">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Let's work together</h2>
+    <p class="section-subtitle">Looking for Fall 2026 co-op opportunities in frontend, full-stack, or UX engineering.</p>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon">📧</span>
+          <div>
+            <h4>Email</h4>
+            <a href="mailto:patil.aary@northeastern.edu">patil.aary@northeastern.edu</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">💼</span>
+          <div>
+            <h4>LinkedIn</h4>
+            <a href="https://linkedin.com/in/aaryapatil1113/" target="_blank" rel="noopener">linkedin.com/in/aaryapatil1113</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">💻</span>
+          <div>
+            <h4>GitHub</h4>
+            <a href="https://github.com/aaryapatil113" target="_blank" rel="noopener">github.com/aaryapatil113</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" placeholder="What's on your mind?"></textarea>
+        </div>
+        <button class="btn btn-primary" onclick="handleFormSubmit(event)" style="width:100%;justify-content:center;">Send Message</button>
+        <div class="form-status" id="formStatus"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ──────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 Aarya Patil. All rights reserved.</p>
+    <p>Built with HTML5, CSS3, and ES6+</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Dark mode — light is default
+  const themeBtn = document.getElementById('themeToggle');
+
+  function setTheme(dark) {
+    if (dark) {
+      document.body.classList.add('dark-mode');
+      document.body.classList.remove('light-theme');
+      themeBtn.textContent = '☀️';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark-mode');
+      document.body.classList.add('light-theme');
+      themeBtn.textContent = '🌙';
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
+  setTheme(localStorage.getItem('theme') === 'dark');
+  themeBtn.addEventListener('click', () => setTheme(!document.body.classList.contains('dark-mode')));
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('section-visible');
+        e.target.classList.remove('section-hidden');
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.section-hidden').forEach(el => observer.observe(el));
+
+  // Active nav on scroll
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  // Hamburger
+  document.getElementById('hamburger').addEventListener('click', () => {
+    const nl = document.getElementById('navLinks');
+    nl.style.display = nl.style.display === 'flex' ? 'none' : 'flex';
+  });
+
+  // Contact form
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const s = document.getElementById('formStatus');
+    s.className = 'form-status success';
+    s.textContent = "Thanks! I'll get back to you soon.";
+    setTimeout(() => s.className = 'form-status', 4000);
+  }
+</script>
+</body>
 </html>
