@@ -64,11 +64,12 @@
           border-color: var(--text);
       }
 
-      /* ── Projects — horizontal scroll on mobile, 3-col desktop ─ */
+      /* ── Projects — cards with name as visual ───────────────── */
       .projects-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 1.25rem;
+          margin-top: 2rem;
       }
 
       .proj-card {
@@ -87,69 +88,57 @@
           box-shadow: var(--shadow-hover);
       }
 
-      .proj-screenshot {
-          width: 100%;
-          aspect-ratio: 16/9;
-          object-fit: cover;
+      /* The "image" area — just the project name big */
+      .proj-name-block {
           background: var(--bg-soft);
-          display: block;
-      }
-
-      /* placeholder when no screenshot */
-      .proj-screenshot-placeholder {
-          width: 100%;
-          aspect-ratio: 16/9;
-          background: var(--bg-soft);
-          display: flex;
-          align-items: center;
-          justify-content: center;
           border-bottom: 1px solid var(--border);
+          padding: 2rem 1.5rem;
+          aspect-ratio: 16/7;
+          display: flex;
+          align-items: flex-end;
       }
 
-      .proj-screenshot-placeholder span {
-          font-size: 0.75rem;
-          font-weight: 500;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-          color: var(--text-muted);
+      .proj-name-heading {
+          font-family: var(--font-display);
+          font-size: clamp(1.6rem, 3vw, 2.4rem);
+          font-weight: 800;
+          color: var(--text);
+          line-height: 1;
+          letter-spacing: -0.02em;
       }
 
       .proj-body {
-          padding: 1.1rem 1.25rem 1.25rem;
-          flex: 1;
+          padding: 1.1rem 1.25rem 1.4rem;
           display: flex;
           flex-direction: column;
-          gap: 0.4rem;
-      }
-
-      .proj-title {
-          font-size: 1rem;
-          font-weight: 700;
-          color: var(--text);
-          font-family: var(--font-heading);
+          gap: 0.6rem;
+          flex: 1;
       }
 
       .proj-desc {
-          font-size: 0.82rem;
+          font-size: 0.84rem;
           color: var(--text-muted);
-          line-height: 1.55;
-          flex: 1;
+          line-height: 1.6;
       }
 
       .proj-tags {
           display: flex;
           flex-wrap: wrap;
           gap: 0.35rem;
-          margin-top: 0.5rem;
+          margin-top: 0.25rem;
       }
 
       .proj-tag {
           font-size: 0.72rem;
-          padding: 0.15rem 0.55rem;
+          padding: 0.15rem 0.6rem;
           border-radius: 999px;
           border: 1px solid var(--border);
           color: var(--text-muted);
           background: transparent;
+      }
+
+      @media (max-width: 800px) {
+          .projects-grid { grid-template-columns: 1fr; }
       }
 
       /* ── Contact cards ───────────────────────────────────────── */
@@ -254,9 +243,7 @@
       <a href="projects.html" class="btn btn-primary">View Projects</a>
       <a href="#contact" class="btn btn-secondary">Get In Touch</a>
     </div>
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
-    </div>
+
   </div>
 </section>
 
@@ -294,9 +281,10 @@
     <div class="projects-grid">
 
       <div class="proj-card">
-        <img src="images/expiro-screenshot.png" alt="Expiro app screenshot" class="proj-screenshot" />
+        <div class="proj-name-block">
+          <h3 class="proj-name-heading">Expiro</h3>
+        </div>
         <div class="proj-body">
-          <p class="proj-title">Expiro</p>
           <p class="proj-desc">Role-based inventory & expiry tracking for restaurants. Built end-to-end with JWT auth across 3 user roles.</p>
           <div class="proj-tags">
             <span class="proj-tag">React</span>
@@ -307,9 +295,10 @@
       </div>
 
       <div class="proj-card">
-        <img src="images/clubmatch-screenshot.png" alt="ClubMatch app screenshot" class="proj-screenshot" />
+        <div class="proj-name-block">
+          <h3 class="proj-name-heading">ClubMatch</h3>
+        </div>
         <div class="proj-body">
-          <p class="proj-title">ClubMatch</p>
           <p class="proj-desc">Club discovery platform for university students — interest-based filtering, mobile-first design.</p>
           <div class="proj-tags">
             <span class="proj-tag">React</span>
@@ -320,9 +309,10 @@
       </div>
 
       <div class="proj-card">
-        <img src="images/calendar-screenshot.jpg" alt="Calendar app screenshot" class="proj-screenshot" />
+        <div class="proj-name-block">
+          <h3 class="proj-name-heading">Calendar Application</h3>
+        </div>
         <div class="proj-body">
-          <p class="proj-title">Calendar Application</p>
           <p class="proj-desc">Multi-calendar Java desktop app with timezone scheduling, iCal export, and 90%+ test coverage.</p>
           <div class="proj-tags">
             <span class="proj-tag">Java</span>
