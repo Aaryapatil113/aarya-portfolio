@@ -40,36 +40,8 @@
           color: var(--text-muted);
           font-size: 1.05rem;
           max-width: 520px;
-          margin: 0 auto 2rem;
+          margin: 0 auto 0;
           line-height: 1.7;
-      }
-
-      /* Filter bar */
-      .filter-bar {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 0.5rem;
-      }
-
-      .filter-btn {
-          padding: 0.4rem 1.1rem;
-          border-radius: 999px;
-          border: 1.5px solid var(--border);
-          background: transparent;
-          font-size: 0.85rem;
-          font-weight: 500;
-          cursor: pointer;
-          transition: all 0.2s;
-          color: var(--text-muted);
-          font-family: var(--font-body);
-      }
-
-      .filter-btn:hover,
-      .filter-btn.active {
-          background: var(--text);
-          color: var(--bg);
-          border-color: var(--text);
       }
 
       /* Grid */
@@ -113,27 +85,6 @@
           display: flex;
           flex-direction: column;
           gap: 0.65rem;
-      }
-
-      .card-header {
-          display: flex;
-          align-items: flex-start;
-          justify-content: space-between;
-          gap: 0.5rem;
-      }
-
-      .card-icon { font-size: 1.5rem; line-height: 1; }
-
-      .card-badge {
-          font-size: 0.68rem;
-          font-weight: 600;
-          letter-spacing: 0.06em;
-          text-transform: uppercase;
-          padding: 0.2rem 0.65rem;
-          border-radius: 999px;
-          background: var(--text);
-          color: var(--bg);
-          white-space: nowrap;
       }
 
       .project-card h2 {
@@ -248,9 +199,6 @@
           font-size: 0.95rem;
       }
 
-      /* Hidden cards */
-      .project-card[data-hidden="true"] { display: none; }
-
       @media (max-width: 600px) {
           .projects-grid { grid-template-columns: 1fr; }
       }
@@ -282,12 +230,6 @@
 <div class="projects-hero">
   <h1>My <em>Projects</em></h1>
   <p>Things I've designed, built, and shipped — from full-stack web apps to data engineering pipelines.</p>
-  <div class="filter-bar">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-    <button class="filter-btn" data-filter="data">Data & Analytics</button>
-    <button class="filter-btn" data-filter="java">Java / OOD</button>
-  </div>
 </div>
 
 <!-- Grid -->
@@ -295,13 +237,9 @@
   <div class="projects-grid" id="projectsGrid">
 
     <!-- Expiro -->
-    <article class="project-card" data-categories="fullstack">
+    <article class="project-card">
       <div class="card-accent-bar" style="background: var(--accent);"></div>
       <div class="card-body">
-        <div class="card-header">
-          <span class="card-icon">🧾</span>
-          <span class="card-badge">Featured</span>
-        </div>
         <h2>Expiro</h2>
         <p class="role">Full Stack Developer · CS5610 Final Project</p>
         <p class="desc">Role-based inventory and expiry tracking web app for restaurants and small businesses — three user roles, real-time dashboards, and expiry alerts.</p>
@@ -319,18 +257,14 @@
         </div>
       </div>
       <div class="card-links">
-        <a href="https://github.com/aaryapatil113" class="btn-filled" target="_blank" rel="noopener">↗ GitHub</a>
+        <a href="https://github.com/Aaryapatil113/Expiro.git" class="btn-filled" target="_blank" rel="noopener">↗ GitHub</a>
       </div>
     </article>
 
     <!-- ClubMatch -->
-    <article class="project-card" data-categories="fullstack">
+    <article class="project-card">
       <div class="card-accent-bar" style="background: var(--accent);"></div>
       <div class="card-body">
-        <div class="card-header">
-          <span class="card-icon">🎯</span>
-          <span class="card-badge">Web App</span>
-        </div>
         <h2>ClubMatch</h2>
         <p class="role">Frontend Developer · Personal Project</p>
         <p class="desc">Club discovery platform for university students — surfaces organizations by interest tags, availability, and campus.</p>
@@ -347,18 +281,14 @@
         </div>
       </div>
       <div class="card-links">
-        <a href="https://github.com/aaryapatil113" class="btn-filled" target="_blank" rel="noopener">↗ GitHub</a>
+        <a href="https://github.com/kanadmotiwale/Clubmatch.git" class="btn-filled" target="_blank" rel="noopener">↗ GitHub</a>
       </div>
     </article>
 
     <!-- Calendar App -->
-    <article class="project-card" data-categories="java">
+    <article class="project-card">
       <div class="card-accent-bar" style="background: var(--accent);"></div>
       <div class="card-body">
-        <div class="card-header">
-          <span class="card-icon">📅</span>
-          <span class="card-badge">OOD</span>
-        </div>
         <h2>Calendar Application</h2>
         <p class="role">Software Engineer · CS OOD Course · Team DEVils</p>
         <p class="desc">Full-featured multi-calendar desktop app in Java with timezone-aware scheduling, conflict detection, and iCal export.</p>
@@ -375,18 +305,14 @@
         </div>
       </div>
       <div class="card-links">
-        <a href="https://github.com/aaryapatil113" class="btn-filled" target="_blank" rel="noopener">↗ GitHub</a>
+        <a href="https://github.com/neu-cs5010/f25-hw7-sent-code-group-DEVils.git" class="btn-filled" target="_blank" rel="noopener">↗ GitHub</a>
       </div>
     </article>
 
     <!-- SportsTV -->
-    <article class="project-card" data-categories="data">
+    <article class="project-card">
       <div class="card-accent-bar" style="background: var(--accent);"></div>
       <div class="card-body">
-        <div class="card-header">
-          <span class="card-icon">📊</span>
-          <span class="card-badge">Analytics</span>
-        </div>
         <h2>SportsTV Analytics Datamart</h2>
         <p class="role">Data Engineer · CS5200 Database Management</p>
         <p class="desc">End-to-end OLAP datamart for sports broadcast analytics — star schema, ETL pipelines in R, and business reports from 179k+ records.</p>
@@ -443,20 +369,6 @@
   document.getElementById('hamburger').addEventListener('click', () => {
     const nl = document.getElementById('navLinks');
     nl.style.display = nl.style.display === 'flex' ? 'none' : 'flex';
-  });
-
-  // Filter
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      document.querySelectorAll('.project-card').forEach(card => {
-        card.setAttribute('data-hidden',
-          filter !== 'all' && !card.dataset.categories.includes(filter) ? 'true' : 'false'
-        );
-      });
-    });
   });
 </script>
 </body>
