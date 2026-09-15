@@ -250,6 +250,64 @@
           flex: 1;
       }
 
+      /* Zoom-only cards (moodboard / full-page views): leave Figma's native
+         pan+zoom and zoom buttons fully usable, just fit the whole board */
+      .design-card-media--zoom {
+          overflow: hidden;
+      }
+
+      /* Horizontal-scroll cards: iframe is wider than its viewport, and the
+         browser's own scrollbar drives panning instead of dragging inside Figma */
+      .design-card-media--hscroll {
+          overflow-x: auto;
+          overflow-y: hidden;
+          -webkit-overflow-scrolling: touch;
+      }
+      .design-card-media--hscroll iframe {
+          width: 1600px;
+          max-width: none;
+          height: 100%;
+          pointer-events: none;
+      }
+
+      /* Vertical-scroll cards: iframe is taller than its viewport */
+      .design-card-media--vscroll {
+          overflow-y: auto;
+          overflow-x: hidden;
+          -webkit-overflow-scrolling: touch;
+      }
+      .design-card-media--vscroll iframe {
+          width: 100%;
+          height: 1400px;
+          pointer-events: none;
+      }
+
+      .design-card-media--hscroll::-webkit-scrollbar,
+      .design-card-media--vscroll::-webkit-scrollbar {
+          width: 8px;
+          height: 8px;
+      }
+      .design-card-media--hscroll::-webkit-scrollbar-thumb,
+      .design-card-media--vscroll::-webkit-scrollbar-thumb {
+          background: var(--border);
+          border-radius: 999px;
+      }
+
+      .design-card-scroll-hint {
+          position: absolute;
+          left: 0.75rem;
+          bottom: 0.6rem;
+          font-size: 0.66rem;
+          letter-spacing: 0.04em;
+          color: var(--text-muted);
+          background: var(--bg-card);
+          border: 1px solid var(--border);
+          padding: 0.2rem 0.6rem;
+          border-radius: 999px;
+          pointer-events: none;
+          opacity: 0.9;
+      }
+
       .design-placeholder {
           position: absolute;
           inset: 0;
@@ -530,65 +588,61 @@
 
     <div class="design-grid">
 
-      <div class="design-card design-card--wide">
-        <div class="design-card-media">
-          <img src="images/design/yumble-flow.png" alt="Yumble app flow"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        </div>
-        <div class="design-placeholder">
-          <span class="design-placeholder-icon">◧</span>
-          <span class="design-placeholder-text">Add image: images/design/yumble-flow.png</span>
-        </div>
-        <div class="design-card-caption">
+      <div class="design-card design-card--wide design-card--embed">
+        <div class="design-card-header">
           <h3>Yumble — Meal Builder</h3>
-          <p>Interactive food-ordering flow where users build a bowl ingredient-by-ingredient and watch it assemble live.</p>
-          <div class="design-tags">
-            <span class="design-tag">Figma</span>
-            <span class="design-tag">Prototype</span>
-            <span class="design-tag">UX Flow</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="design-card design-card--embed">
-        <div class="design-card-header">
-          <h3>Web Application — Frame 1</h3>
           <div class="design-tags">
             <span class="design-tag" style="border-color:var(--border);color:var(--text-muted);background:transparent;">Figma</span>
-            <span class="design-tag" style="border-color:var(--border);color:var(--text-muted);background:transparent;">Web App</span>
+            <span class="design-tag" style="border-color:var(--border);color:var(--text-muted);background:transparent;">Moodboard</span>
           </div>
         </div>
-        <div class="design-card-media design-card-media--embed">
-          <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FlPYdnUcdvCHi0Z8pi89ATz%2FWeb-Application%3Fnode-id%3D39-3"
-                  allowfullscreen loading="lazy" title="Web Application — Frame 1"></iframe>
-        </div>
-      </div>
-
-      <div class="design-card design-card--embed">
-        <div class="design-card-header">
-          <h3>Web Application — Frame 2</h3>
-          <div class="design-tags">
-            <span class="design-tag" style="border-color:var(--border);color:var(--text-muted);background:transparent;">Figma</span>
-            <span class="design-tag" style="border-color:var(--border);color:var(--text-muted);background:transparent;">Web App</span>
-          </div>
-        </div>
-        <div class="design-card-media design-card-media--embed">
-          <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FlPYdnUcdvCHi0Z8pi89ATz%2FWeb-Application%3Fnode-id%3D89-86"
-                  allowfullscreen loading="lazy" title="Web Application — Frame 2"></iframe>
-        </div>
-      </div>
-
-      <div class="design-card design-card--embed">
-        <div class="design-card-header">
-          <h3>Web Application — Frame 3</h3>
-          <div class="design-tags">
-            <span class="design-tag" style="border-color:var(--border);color:var(--text-muted);background:transparent;">Figma</span>
-            <span class="design-tag" style="border-color:var(--border);color:var(--text-muted);background:transparent;">Web App</span>
-          </div>
-        </div>
-        <div class="design-card-media design-card-media--embed">
+        <div class="design-card-media design-card-media--embed design-card-media--zoom">
           <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FlPYdnUcdvCHi0Z8pi89ATz%2FWeb-Application%3Fnode-id%3D70-22"
-                  allowfullscreen loading="lazy" title="Web Application — Frame 3"></iframe>
+                  allowfullscreen loading="lazy" title="Yumble — Meal Builder"></iframe>
+        </div>
+      </div>
+
+      <div class="design-card design-card--embed">
+        <div class="design-card-header">
+          <h3>Prototype for Yumble</h3>
+          <div class="design-tags">
+            <span class="design-tag" style="border-color:var(--border);color:var(--text-muted);background:transparent;">Figma</span>
+            <span class="design-tag" style="border-color:var(--border);color:var(--text-muted);background:transparent;">Prototype</span>
+          </div>
+        </div>
+        <div class="design-card-media design-card-media--embed design-card-media--hscroll">
+          <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FlPYdnUcdvCHi0Z8pi89ATz%2FWeb-Application%3Fnode-id%3D89-86"
+                  allowfullscreen loading="lazy" title="Prototype for Yumble"></iframe>
+        </div>
+        <div class="design-card-scroll-hint">Scroll → to explore the flow</div>
+      </div>
+
+      <div class="design-card design-card--embed">
+        <div class="design-card-header">
+          <h3>Cherry Coke</h3>
+          <div class="design-tags">
+            <span class="design-tag" style="border-color:var(--border);color:var(--text-muted);background:transparent;">Figma</span>
+            <span class="design-tag" style="border-color:var(--border);color:var(--text-muted);background:transparent;">Landing Page</span>
+          </div>
+        </div>
+        <div class="design-card-media design-card-media--embed design-card-media--vscroll">
+          <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FlPYdnUcdvCHi0Z8pi89ATz%2FWeb-Application%3Fnode-id%3D39-3"
+                  allowfullscreen loading="lazy" title="Cherry Coke"></iframe>
+        </div>
+        <div class="design-card-scroll-hint">Scroll ↓ to see the full page</div>
+      </div>
+
+      <div class="design-card design-card--embed">
+        <div class="design-card-header">
+          <h3>Expiro</h3>
+          <div class="design-tags">
+            <span class="design-tag" style="border-color:var(--border);color:var(--text-muted);background:transparent;">Figma</span>
+            <span class="design-tag" style="border-color:var(--border);color:var(--text-muted);background:transparent;">Web App</span>
+          </div>
+        </div>
+        <div class="design-card-media design-card-media--embed design-card-media--zoom">
+          <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fdesign%2FlPYdnUcdvCHi0Z8pi89ATz%2FWeb-Application%3Fnode-id%3D51-8"
+                  allowfullscreen loading="lazy" title="Expiro"></iframe>
         </div>
       </div>
 
